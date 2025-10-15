@@ -5,7 +5,7 @@ import os
 # In a real scenario, you would open an existing image:
 # img = Image.open("your_image.jpg")
 # img = Image.new('RGB', (400, 300), color = 'red')
-img = Image.open(os.path.join("my_writing", "20250625_095530.jpg")).convert('L')
+img = Image.open(os.path.join("images", "0219_1.jpg")).convert('L')
 w, h = img.size
 
 # Define the source quadrilateral's corners in the input image.
@@ -21,7 +21,7 @@ source_quad = (
 
 # Define the size of the new image where the quad will be mapped to a rectangle.
 # The quad will be stretched/shrunk to fit this new rectangular area.
-new_size = (w - 100, h - 100)
+new_size = (int(w * 0.7), int(h * 0.7))
 
 # Apply the quad transformation
 # The Image.QUAD method takes an 8-tuple representing the source quadrilateral's corners.
